@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("https://static1.squarespace.com/static/57bb1b5e59cc68374d95e818/t/6080799bbb54e72b94e23c28/1619032475894/SpaceGrotesk-VariableFont_wght.ttf");
+}
+
+body {
+  background: #fff;
+}
+
+p {
+  font-family: Space Grotesk;
+}
+
+h1 {
+  font-family: Space Grotesk;
+}
+
+.box {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+
+.box1 {
+  height: 80%;
+  width: 80%;
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+
+.boxx {
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+.bd {
+  border: 1px solid #28a6ff;
+}

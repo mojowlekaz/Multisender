@@ -1,0 +1,10 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  width="24"
+  height="24"
+  fill="green" <!-- You can change the fill color -->
+>
+  <path d="M0 0h24v24H0z" fill="none" />
+  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.29 14.29L6.7 12.7a1 1 0 0 1 0-1.4 1 1 0 0 1 1.41 0L11 13.17l6.88-6.88a1 1 0 0 1 1.41 0 1 1 0 0 1 0 1.42l-7 7a1 1 0 0 1-1.42 0z" />
+</svg>
