@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { MultisendProviderContext } from "@/contexts/MultisendProvider";
+import { SuccessMessage } from "./Successmessage";
 
 export default function SendToken({
   csvContent,
@@ -84,39 +85,45 @@ export default function SendToken({
   ];
 
   return (
-    <div className="px-10 py-10 h-full w-full   justify-center items-center">
-      <div className="flex flex-row flex-wrap flex-shrink justify-between relative gap-10">
-        {content.map((items, index) => (
-          <div
-            key={index}
-            className="boxx flex flex-wrap flex-shrink justify-center items-center"
-          >
-            <div className="flex flex-col gap-2 justify-center items-center">
-              <p className="text-gray-200 font-bold text-[17px]">
-                {" "}
-                {items.name}
-              </p>
-              <p className="text-gray-200 font-bold text-[15px]">
-                {" "}
-                {items.for}
-              </p>
-            </div>
+    <div>
+      {transferSuccessful ? (
+        <SuccessMessage />
+      ) : (
+        <div className="px-10 py-10 h-full w-full   justify-center items-center">
+          <div className="flex flex-row flex-wrap flex-shrink justify-between relative gap-10">
+            {content.map((items, index) => (
+              <div
+                key={index}
+                className="boxx flex flex-wrap flex-shrink justify-center items-center"
+              >
+                <div className="flex flex-col gap-2 justify-center items-center">
+                  <p className="text-gray-200 font-bold text-[17px]">
+                    {" "}
+                    {items.name}
+                  </p>
+                  <p className="text-gray-200 font-bold text-[15px]">
+                    {" "}
+                    {items.for}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <br />
-      <div className="flex justify-center items-center">
-        <button
-          onClick={() =>
-            PerformBatchTransfer(walletAddress, amount, tokenDecimals)
-          }
-          className="w-full  rounded-[5px] bg-gray-500  h-[40px] justify-center items-center flex"
-        >
-          <p className="text-white text-[15px] font-medium">
-            Perform batch transfer
-          </p>
-        </button>
-      </div>
+          <br />
+          <div className="flex justify-center items-center">
+            <button
+              onClick={() =>
+                PerformBatchTransfer(walletAddress, amount, tokenDecimals)
+              }
+              className="w-full  rounded-[5px] bg-gray-500  h-[40px] justify-center items-center flex"
+            >
+              <p className="text-white text-[15px] font-medium">
+                Perform batch transfer
+              </p>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

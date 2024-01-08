@@ -7,8 +7,15 @@ export default function ApprovalModal({
   Oncontinue,
   tokenAddress,
 }) {
-  const { tokenname, usertokenBalance, calculateFees, fee, Approve, approved } =
-    useContext(MultisendProviderContext);
+  const {
+    tokenname,
+    usertokenBalance,
+    calculateFees,
+    fee,
+    Approve,
+    loading,
+    approved,
+  } = useContext(MultisendProviderContext);
   const [totalrecipient, setTotalRecipient] = useState(0);
   const [totalamount, setTotalAmount] = useState(0);
 
@@ -63,7 +70,6 @@ export default function ApprovalModal({
     {
       name: (
         <div>
-          {" "}
           {usertokenBalance.length > 10
             ? `${usertokenBalance.slice(0, 6)}...`
             : usertokenBalance}
@@ -113,6 +119,18 @@ export default function ApprovalModal({
           </button>
         )}
       </div>
+
+      {loading ? (
+        <p
+          style={{ color: "#888" }}
+          className=" font-bold text-center text-[17px]"
+        >
+          {" "}
+          Waiting for Approval....
+        </p>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

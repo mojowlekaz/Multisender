@@ -137,6 +137,7 @@ export default function MultisendProvider({ children }) {
 
   async function Approve(tokenaddress, amount) {
     try {
+      setLoading(true);
       let provider = new ethers.BrowserProvider(window.ethereum);
       let signer = await provider.getSigner();
       const contract = new ethers.Contract(
@@ -467,7 +468,9 @@ export default function MultisendProvider({ children }) {
           gasLimit: 5000000,
         }
       );
+      setLoading(false);
       setApproval(true);
+
       console.log(getApproval);
     } catch (error) {
       console.log(error);
